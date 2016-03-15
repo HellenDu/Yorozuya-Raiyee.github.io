@@ -16,6 +16,7 @@ let shell = require('gulp-shell');
 let sourcemaps = require('gulp-sourcemaps');
 let uglify = require('gulp-uglify');
 let path = require('path');
+let Task = require('shell-task');
 
 var CONTEXT = '';
 
@@ -123,6 +124,13 @@ gulp.task('replace', function () {
         .pipe(gulp.dest('dist'));
 });
 
+var manifest = function () {
+    new Task('gulp manifestJson')
+        .then('gulp replaceManifestJson')
+        .then('gulp manifestJs replace')
+        .run();
+};
+
 gulp.task('build', shell.task([
     'gulp del',
     'gulp scss bs-js js',
@@ -130,6 +138,8 @@ gulp.task('build', shell.task([
     'gulp replaceManifestJson',
     'gulp manifestJs replace'
 ]));
+
+gulp.task('manifest', manifest);
 
 gulp.task('watch', function () {
     gulp.watch(['src/**/js/*.js'])
@@ -141,15 +151,18 @@ gulp.task('watch', function () {
     gulp.watch(['src/**/scss/*.scss', '!src/**/scss/bootstrap*.scss'])
         .on('change', function (file) {
             const filePath = file.path;
-            return compileScss(path.relative(__dirname, filePath))
+            compileScss(path.relative(__dirname, filePath))
                 .pipe(notify(path.basename(filePath) + ' has been complied to <%= file.relative %>!'));
         });
 
     gulp.watch(['src/**/scss/bootstrap/**/*.scss'])
         .on('change', function () {
-            return compileScss(['src/**/scss/bootstrap*.scss'])
+            compileScss(['src/**/scss/bootstrap*.scss'])
                 .pipe(notify('bootstrap*.scss has been complied to <%= file.relative %>!'));
         });
+
+    gulp.watch(['src/**/html/*.html'])
+        .on('change', manifest);
 });
 
 gulp.task('default', ['build', 'watch']);
