@@ -41,10 +41,10 @@ var compileScss = function (srcPath) {
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(postcss([cssnano({safe: true}), autoprefixer({browsers: '> 1% in CN'})]))
-        .pipe(sourcemaps.write({includeContent: false, sourceRoot: CONTEXT + '/src'}))
         .pipe(rename(function (path) {
             path.dirname = path.dirname.replace(/\/scss$/, '/css');
         }))
+        .pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: CONTEXT + '/src'}))
         .pipe(gulp.dest('dist'));
 };
 
@@ -52,7 +52,7 @@ var compileJs = function (srcPath) {
     return gulp.src(srcPath, {base: 'src'})
         .pipe(sourcemaps.init())
         .pipe(uglify())
-        .pipe(sourcemaps.write({includeContent: false, sourceRoot: CONTEXT + '/src'}))
+        .pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: CONTEXT + '/src'}))
         .pipe(gulp.dest('dist'));
 };
 
@@ -82,7 +82,7 @@ gulp.task('bs-js', function () {
         .pipe(sourcemaps.init())
         .pipe(concat('common/js/bootstrap.js'))
         .pipe(uglify())
-        .pipe(sourcemaps.write({includeContent: false, sourceRoot: CONTEXT + '/src'}))
+        .pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: CONTEXT + '/src'}))
         .pipe(gulp.dest('dist'));
 });
 
