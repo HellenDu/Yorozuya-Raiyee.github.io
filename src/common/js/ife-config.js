@@ -9,10 +9,11 @@
         },
         paths: {
             jquery: 'common/js/jquery-1.12.1',
-            bootstrap:'common/js/bootstrap'
+            bootstrap: 'common/js/bootstrap'
         }
     });
 
-    require(['jquery'],function ($) {
+    require(['jquery'], function ($) {
+        alert('requireJs 加载成功！当前使用的 jQuery 版本为：' + $().jquery + '！');
     });
 }();
