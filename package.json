@@ -1,0 +1,46 @@
+{
+  "name": "yorozuya-raiyee.github.io",
+  "version": "1.0.0",
+  "description": "瑞奕惟扬万事屋小组公用仓库，用于学习分享各种知识。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JounQin/Yorozuya-Raiyee.github.io.git"
+  },
+  "keywords": [
+    "Raiyee",
+    "Yorozuya"
+  ],
+  "authors": [
+    {
+      "name": "JounQin",
+      "email": "liujr@raiyee.com",
+      "url": "https://github.com/JounQin"
+    }
+  ],
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/JounQin/Yorozuya-Raiyee.github.io/issues"
+  },
+  "homepage": "https://github.com/JounQin/Yorozuya-Raiyee.github.io#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "cssnano": "^3.5.2",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-insert": "^0.5.0",
+    "gulp-json-hash-manifest": "^1.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-postcss": "^6.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.2.0",
+    "gulp-shell": "^0.5.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3"
+  }
+}
