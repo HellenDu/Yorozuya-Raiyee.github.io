@@ -109,6 +109,7 @@ gulp.task('manifestJs', function () {
         .pipe(gulp.dest('dist'));
 });
 
+// TODO 优化静态资源正则匹配,使用完整相对路径获取对应 hash 值
 gulp.task('replace', function () {
     var manifest = require('./dist/hash-manifest.json');
     return gulp.src('src/**/*.html')
