@@ -92,14 +92,13 @@ gulp.task('js', function () {
 });
 
 gulp.task('manifestJson', function () {
-    return gulp.src('dist/**/*.?(js|css|html)')
+    return gulp.src(['dist/**/*.?(js|css|html)', '!dist/hash-manifest.js'])
         .pipe(hashManifest({dest: 'dist'}));
 });
 
-gulp.task('replaceManifestJson', function () {
+gulp.task('manifestJsonSelf', function () {
     return gulp.src('dist/hash-manifest.json')
-        .pipe(replace(/^\{/gi, '{"hash-manifest.js":' + +new Date + ','))
-        .pipe(gulp.dest('dist'));
+        .pipe(hashManifest({dest: 'dist', filename: 'self-manifest.json'}));
 });
 
 gulp.task('manifestJs', function () {
@@ -111,23 +110,24 @@ gulp.task('manifestJs', function () {
 
 // TODO 优化静态资源正则匹配,使用完整相对路径获取对应 hash 值
 gulp.task('replace', function () {
-    var manifest = require('./dist/hash-manifest.json');
+    const hashManifest = require('./dist/hash-manifest.json');
+    const selfManifest = require('./dist/self-manifest.json');
+    const rootDir = '/dist/';
+    const DOUBLE_QUOTES = '"';
     return gulp.src('src/**/*.html')
-        .pipe(replace(/\/([\w\-\.])+(['"]\)})?\?(hashversion)/gi, function (matched) {
-            matched = matched.substring(1, matched.length - 12);
-            var fileName = matched.replace(/['"]\)}/, '');
-            for (var key in manifest) {
-                if (key.endsWith('/' + fileName) || key === fileName) {
-                    return '/' + matched + '?' + manifest[key];
-                }
-            }
+        .pipe(replace(/"([\w\-\.]*\/)+[\w\-\.]+\.(js|css|html)"/gi, function (matched) {
+            matched = matched.substring(0, matched.length - 1);
+            const rootIndex = matched.indexOf(rootDir);
+            const fileRelativePath = matched.substring(rootIndex + 6, matched.length);
+            const hash = fileRelativePath === 'hash-manifest.js' ? selfManifest['hash-manifest.json'] : hashManifest[fileRelativePath];
+            return (hash ? DOUBLE_QUOTES + rootDir + fileRelativePath + '?' + hash : matched) + DOUBLE_QUOTES;
         }))
         .pipe(gulp.dest('dist'));
 });
 
-var manifest = function () {
+var manifestTask = function () {
     new Task('gulp manifestJson')
-        .then('gulp replaceManifestJson')
+        .then('gulp manifestJsonSelf')
         .then('gulp manifestJs replace')
         .run();
 };
@@ -135,12 +135,10 @@ var manifest = function () {
 gulp.task('build', shell.task([
     'gulp del',
     'gulp scss bs-js js',
-    'gulp manifestJson',
-    'gulp replaceManifestJson',
-    'gulp manifestJs replace'
+    'gulp manifest'
 ]));
 
-gulp.task('manifest', manifest);
+gulp.task('manifest', manifestTask);
 
 gulp.task('watch', function () {
     gulp.watch(['src/**/js/*.js'])
@@ -163,7 +161,7 @@ gulp.task('watch', function () {
         });
 
     gulp.watch(['src/**/html/*.html'])
-        .on('change', manifest);
+        .on('change', manifestTask);
 });
 
 gulp.task('default', ['build', 'watch']);
