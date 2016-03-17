@@ -38,6 +38,14 @@ gulp.task('del-original-bs-scss', ['rename-bs-scss'], function () {
     del(['src/common/scss/**/_*.scss']);
 });
 
+var compileCSS = function (srcPath) {
+    return gulp.src(srcPath, {base: 'src'})
+        .pipe(sourcemaps.init())
+        .pipe(postcss([cssnano({safe: true}), autoprefixer({browsers: '> 1% in CN'})]))
+        .pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: CONTEXT + '/src'}))
+        .pipe(gulp.dest('dist'));
+};
+
 var compileScss = function (srcPath) {
     return gulp.src(srcPath, {base: 'src'})
         .pipe(sourcemaps.init())
@@ -60,6 +68,10 @@ var compileJs = function (srcPath) {
         .pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: CONTEXT + '/src'}))
         .pipe(gulp.dest('dist'));
 };
+
+gulp.task('css', function () {
+    return compileScss(['src/**/css/*.css']);
+});
 
 gulp.task('scss', function () {
     return compileScss(['src/**/scss/*.scss']);
@@ -129,7 +141,7 @@ gulp.task('replace', function () {
 });
 
 gulp.task('copy',function(){
-   gulp.src(['src/**/*','!src/**/*.?(js|scss|html)'])
+   gulp.src(['src/**/*','!src/**/*.?(js|css|scss|html)'])
        .pipe(gulp.dest('dist'));
 });
 
@@ -142,7 +154,7 @@ var manifestTask = function () {
 
 gulp.task('build', shell.task([
     'gulp del',
-    'gulp scss bs-js js',
+    'gulp css scss bs-js js',
     'gulp manifest'
 ]));
 
@@ -159,6 +171,13 @@ gulp.task('watch', function () {
         .on('change', function (file) {
             const filePath = file.path;
             compileScss(path.relative(__dirname, filePath))
+                .pipe(notify(path.basename(filePath) + ' has been complied to <%= file.relative %>!'));
+        });
+
+    gulp.watch(['src/**/css/*.css'])
+        .on('change', function (file) {
+            const filePath = file.path;
+            compileCSS(path.relative(__dirname, filePath))
                 .pipe(notify(path.basename(filePath) + ' has been complied to <%= file.relative %>!'));
         });
 

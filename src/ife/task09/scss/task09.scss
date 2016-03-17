@@ -244,19 +244,20 @@ $right-container-width: $actual-total-width - $left-container-width;
       }
     }
 
-    .form-exchange {
+    .form-block.icon-exchange {
       position: relative;
+      margin-left: $scale * 20px;
+      margin-right: $scale * 20px;
 
-      &:after {
+      &:before {
         position: absolute;
-        content: '换';
         top: 50%;
-        right: -30px;
+        right: -48px;
         transform: translate3d(0, -50%, 0);
-        background-color: #abaaaa;
-        color: #fff;
+        background-color: #fff;
+        color: #abaaaa;
         padding: 2px 4px;
-        font-size: 12px;
+        font-size: 54px;
       }
     }
 
