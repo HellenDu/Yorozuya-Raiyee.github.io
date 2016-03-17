@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <title>Task09 Action</title>
     <link rel="stylesheet" href="/dist/common/css/bootstrap.css">
+    <link rel="stylesheet" href="/dist/common/css/iconfont.css">
     <link rel="stylesheet" href="/dist/ife/task09/css/task09.css">
 </head>
 <body>
@@ -138,7 +139,7 @@
             </ol>
         </div>
         <div class="main-content">
-            <div class="search-bar bg-white clearfix">
+            <div class="search-bar clearfix">
                 <form class="form-inline" action="#">
                     <div class="form-block pull-left">
                         <div class="form-line active">
@@ -153,7 +154,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-block pull-left form-exchange">
+                    <div class="form-block pull-left iconfont icon-exchange">
                         <div class="form-line">
                             <label for="customer">买方</label>
                             <div class="input-group">
@@ -180,7 +181,8 @@
                     <div class="form-block pull-left">
                         <div class="form-line">
                             <label for="date">日期</label>
-                            <input class="form-control form-control-lg" id="date" type="text" value="2016-04-01" readonly>
+                            <input class="form-control form-control-lg" id="date" type="text" value="2016-04-01"
+                                   readonly>
                             <!--<input class="form-control form-control-lg" id="date" type="date" value="2016-04-01">-->
                             <label for="consuming">总耗时</label>
                             <div class="input-group">
@@ -217,6 +219,624 @@
                         <button class="btn btn-primary search-btn" type="submit">搜索</button>
                     </div>
                 </form>
+            </div>
+            <div class="history-query clearfix">
+                <div class="history-item chevron">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </div>
+
+                <div class="history-item active">
+                    <p>10:00 am</p>
+                    <span class="glyphicon glyphicon-yen"></span>
+                    <span class="highlight">1200</span>
+                </div>
+
+                <div class="history-item">
+                    <p>11:00 am</p>
+                    <span class="glyphicon glyphicon-yen"></span>
+                    <span class="highlight">1300</span>
+                </div>
+
+                <div class="history-item">
+                    <p>12:00 am</p>
+                    <span class="glyphicon glyphicon-yen"></span>
+                    <span class="highlight">1200</span>
+                </div>
+
+                <div class="history-item">
+                    <p>01:00 am</p>
+                    <span class="glyphicon glyphicon-yen"></span>
+                    <span class="highlight">1400</span>
+                </div>
+
+                <div class="history-item">
+                    <p>02:00 am</p>
+                    <span class="glyphicon glyphicon-yen"></span>
+                    <span class="highlight">1500</span>
+                </div>
+
+                <div class="history-item">
+                    <p>03:00 am</p>
+                    <span class="glyphicon glyphicon-yen"></span>
+                    <span class="highlight">1800</span>
+                </div>
+
+                <div class="history-item chevron">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </div>
+
+                <div class="history-item history-btn">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <span>历史查询</span>
+                </div>
+            </div>
+            <div class="statistic">
+                <h6>2016年4月份统计</h6>
+                <ul class="clearfix">
+                    <li class="item-green">
+                        <div class="item-content">
+                            <p>133311</p>
+                            成交量
+                        </div>
+                    </li>
+                    <li class="item-blue">
+                        <div class="item-content">
+                            <p>133311</p>
+                            成交量
+                        </div>
+                    </li>
+                    <li class="item-red">
+                        <div class="item-content">
+                            <p>133311</p>
+                            成交量
+                        </div>
+                    </li>
+                    <li class="item-yellow">
+                        <div class="item-content">
+                            <p>133311</p>
+                            成交量
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-container clearfix">
+                <div class="panel panel-default panel-first">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">
+                            第一组项目
+                        </h6>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="active"><a href="javascript:;">项目一</a></li>
+                            <li role="presentation"><a href="javascript:;">项目二</a></li>
+                            <li role="presentation"><a href="javascript:;">项目三</a></li>
+                            <li role="presentation"><a href="javascript:;">项目四</a></li>
+                            <li role="presentation"><a href="javascript:;">项目五</a></li>
+                        </ul>
+                        <div class="nav-body">
+                            <table class="table table-bordered text-center">
+                                <tbody>
+                                <tr>
+                                    <td class="hover">购买材料一</td>
+                                    <td>购买材料一</td>
+                                    <td>购买材料一</td>
+                                    <td>购买材料一</td>
+                                </tr>
+                                <tr>
+                                    <td>购买材料二</td>
+                                    <td>购买材料二</td>
+                                    <td>购买材料二</td>
+                                    <td>购买材料二</td>
+                                </tr>
+                                <tr>
+                                    <td>购买材料三</td>
+                                    <td>购买材料三</td>
+                                    <td>购买材料三</td>
+                                    <td>购买材料三</td>
+                                </tr>
+                                <tr>
+                                    <td>购买材料四</td>
+                                    <td>购买材料四</td>
+                                    <td>购买材料四</td>
+                                    <td>购买材料四</td>
+                                </tr>
+                                <tr>
+                                    <td>购买材料五</td>
+                                    <td>购买材料五</td>
+                                    <td>购买材料五</td>
+                                    <td>购买材料五</td>
+                                </tr>
+                                <tr>
+                                    <td>购买材料六</td>
+                                    <td>购买材料六</td>
+                                    <td>购买材料六</td>
+                                    <td>购买材料六</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default panel-second">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">
+                            第二组项目
+                        </h6>
+                    </div>
+                    <div class="panel-body">
+                        <dl>
+                            <dt>标题</dt>
+                            <dd>项目报表三</dd>
+                        </dl>
+                        <div class="middle-content clearfix">
+                            <dl class="price-dl pull-left">
+                                <dt>价格</dt>
+                                <dd>
+                                    <span class="glyphicon glyphicon-yen"></span>
+                                    158
+                                </dd>
+                            </dl>
+                            <dl class="pull-left">
+                                <dt>负责人</dt>
+                                <dd>小A</dd>
+                            </dl>
+                        </div>
+                        <dl>
+                            <dt>详细描述</dt>
+                            <dd>该项目目前负责人是……</dd>
+                        </dl>
+                        <hr>
+                        <div class="checkbox-inline">
+                            <label>
+                                <input type="checkbox" checked disabled>
+                                <span>遵守保密协议</span>
+                            </label>
+                        </div>
+                        <button class="btn btn-primary pull-right" type="button">搜索</button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-container clearfix">
+                <div class="panel panel-default panel-third">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">
+                            日历
+                        </h6>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table calendar-table">
+                            <caption>
+                                <form class="form-inline" action="#">
+                                    <div class="input-group">
+                                        <label class="sr-only" for="year">年份</label>
+                                        <select class="form-control" name="year" id="year">
+                                            <option value="2016">2016年</option>
+                                        </select>
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="sr-only" for="month">月份</label>
+                                        <select class="form-control" name="year" id="month">
+                                            <option value="4">4月</option>
+                                        </select>
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="sr-only" for="day">标注日期</label>
+                                        <select class="form-control" name="year" id="day">
+                                            <option value="0">标注日期</option>
+                                        </select>
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <button class="btn btn-default today-btn">返回今天</button>
+                                    </div>
+                                </form>
+                            </caption>
+                            <thead>
+                            <tr>
+                                <th>一</th>
+                                <th>二</th>
+                                <th>三</th>
+                                <th>四</th>
+                                <th>五</th>
+                                <th>六</th>
+                                <th>日</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="festival">
+                                    <div>
+                                        <span>1</span>
+                                        <br>
+                                        <span>愚人节</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>2</span>
+                                        <br>
+                                        <span>廿五</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>3</span>
+                                        <br>
+                                        <span>廿六</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <span>4</span>
+                                        <br>
+                                        <span>廿七</span>
+                                    </div>
+                                </td>
+                                <td class="festival">
+                                    <div>
+                                        <span>5</span>
+                                        <br>
+                                        <span>清明</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>6</span>
+                                        <br>
+                                        <span>廿九</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>7</span>
+                                        <br>
+                                        <span>三月</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>8</span>
+                                        <br>
+                                        <span>初二</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="highlight">
+                                        <span>9</span>
+                                        <br>
+                                        <span>初三</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>10</span>
+                                        <br>
+                                        <span>初四</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <span>11</span>
+                                        <br>
+                                        <span>初五</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="highlight">
+                                        <span>12</span>
+                                        <br>
+                                        <span>初六</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>13</span>
+                                        <br>
+                                        <span>初七</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>14</span>
+                                        <br>
+                                        <span>初八</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>15</span>
+                                        <br>
+                                        <span>初九</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>16</span>
+                                        <br>
+                                        <span>初十</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>17</span>
+                                        <br>
+                                        <span>十一</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <span>18</span>
+                                        <br>
+                                        <span>十二</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="highlight">
+                                        <span>19</span>
+                                        <br>
+                                        <span>十三</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>20</span>
+                                        <br>
+                                        <span>十四</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>21</span>
+                                        <br>
+                                        <span>十五</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>22</span>
+                                        <br>
+                                        <span>十六</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>23</span>
+                                        <br>
+                                        <span>十七</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>24</span>
+                                        <br>
+                                        <span>十八</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <span>25</span>
+                                        <br>
+                                        <span>十九</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>26</span>
+                                        <br>
+                                        <span>二十</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>27</span>
+                                        <br>
+                                        <span>廿一</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>28</span>
+                                        <br>
+                                        <span>廿二</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>29</span>
+                                        <br>
+                                        <span>廿三</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span>30</span>
+                                        <br>
+                                        <span>廿四</span>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel panel-default panel-forth">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">
+                            汽车行业品牌榜
+                        </h6>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-bordered table-striped table-hover brand-table">
+                            <tr>
+                                <th>排名</th>
+                                <th>品牌</th>
+                                <th>搜索指数</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>大众</th>
+                                <th>
+                                    <div class="pull-left">48912001</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90"
+                                             aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 90%;background-color: #ed6e52">
+                                            <span class="sr-only">90% 的关注度</span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <th>丰田</th>
+                                <th>
+                                    <div class="pull-left">29307333</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="80"
+                                             aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 80%;background-color: #ef8150">
+                                            <span class="sr-only">80% 的关注度</span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <th>奥迪</th>
+                                <th>
+                                    <div class="pull-left">23139070</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                                             aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 70%;background-color: #f19f4f">
+                                            <span class="sr-only">70% 的关注度</span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>4</th>
+                                <th>本田</th>
+                                <th>
+                                    <div class="pull-left">22885564</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="60"
+                                             aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 60%;background-color: #7fcbf0">
+                                            <span class="sr-only">60% 的关注度</span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>5</th>
+                                <th>福特</th>
+                                <th>
+                                    <div class="pull-left">22324792</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="50"
+                                             aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 50%;background-color: #7fcbf0">
+                                            <span class="sr-only">50% 的关注度</span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>6</th>
+                                <th>宝马</th>
+                                <th>
+                                    <div class="pull-left">21444077</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="45"
+                                             aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 45%;background-color: #7fcbf0">
+                                            <span class="sr-only">45% 的关注度</span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>7</th>
+                                <th>现代</th>
+                                <th>
+                                    <div class="pull-left">20114969</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="40"
+                                             aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 40%;background-color: #7fcbf0">
+                                            <span class="sr-only">40% 的关注度</span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>8</th>
+                                <th>起亚</th>
+                                <th>
+                                    <div class="pull-left">19251680</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="35"
+                                             aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 35%;background-color: #7fcbf0">
+                                            <span class="sr-only">35% 的关注度</span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>9</th>
+                                <th>奔驰</th>
+                                <th>
+                                    <div class="pull-left">19172837</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="30"
+                                             aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 30%;background-color: #7fcbf0">
+                                            <span class="sr-only">30% 的关注度</span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>10</th>
+                                <th>别克</th>
+                                <th>
+                                    <div class="pull-left">18544027</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="25"
+                                             aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 25%;background-color: #7fcbf0">
+                                            <span class="sr-only">25% 的关注度</span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
