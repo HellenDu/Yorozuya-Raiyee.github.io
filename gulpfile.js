@@ -10,6 +10,7 @@ let replace = require('gulp-replace');
 let autoprefixer = require('autoprefixer');
 let cssnano = require('cssnano');
 let notify = require('gulp-notify');
+let notifier = require('node-notifier');
 let rename = require('gulp-rename');
 let sass = require('gulp-sass');
 let shell = require('gulp-shell');
@@ -41,6 +42,9 @@ var compileScss = function (srcPath) {
     return gulp.src(srcPath, {base: 'src'})
         .pipe(sourcemaps.init())
         .pipe(sass())
+        .on('error',function(e){
+            console.log(e);
+        })
         .pipe(postcss([cssnano({safe: true}), autoprefixer({browsers: '> 1% in CN'})]))
         .pipe(rename(function (path) {
             path.dirname = path.dirname.replace(/\/scss$/, '/css');
@@ -108,7 +112,6 @@ gulp.task('manifestJs', function () {
         .pipe(gulp.dest('dist'));
 });
 
-// TODO 优化静态资源正则匹配,使用完整相对路径获取对应 hash 值
 gulp.task('replace', function () {
     const hashManifest = require('./dist/hash-manifest.json');
     const selfManifest = require('./dist/self-manifest.json');
@@ -123,6 +126,11 @@ gulp.task('replace', function () {
             return (hash ? DOUBLE_QUOTES + rootDir + fileRelativePath + '?' + hash : matched) + DOUBLE_QUOTES;
         }))
         .pipe(gulp.dest('dist'));
+});
+
+gulp.task('copy',function(){
+   gulp.src(['src/**/*','!src/**/*.?(js|scss|html)'])
+       .pipe(gulp.dest('dist'));
 });
 
 var manifestTask = function () {
@@ -160,8 +168,12 @@ gulp.task('watch', function () {
                 .pipe(notify('bootstrap*.scss has been complied to <%= file.relative %>!'));
         });
 
-    gulp.watch(['src/**/html/*.html'])
-        .on('change', manifestTask);
+    // gulp.watch(['src/**/html/*.html'])
+    //     .on('change', manifestTask);
+
+    notifier.notify({
+        message: 'I\'m watching!'
+    });
 });
 
 gulp.task('default', ['build', 'watch']);

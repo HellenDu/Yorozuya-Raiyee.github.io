@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>Task09 Action</title>
+    <link rel="stylesheet" href="/dist/common/css/bootstrap.css?d6539c44c428394f9d57d85b9467c7147e4c3194">
+    <link rel="stylesheet" href="/dist/ife/task09/css/task09.css?85cee71afb4cd4a786d2fcebd1f7aac48c86c805">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-container">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <span class="glyphicon glyphicon-th-large"></span>
+            </a>
+        </div>
+        <div class="navbar-right">
+            <form class="navbar-form" action="#">
+                <div class="input-group">
+                    <div class="input-group-addon search-addon">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </div>
+                    <input class="form-control" type="text" name="keyword" title="搜索">
+                </div>
+                <button type="button" class="btn btn-default login-btn">
+                    <span class="glyphicon glyphicon-user"></span>
+                    登录
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="main-container">
+    <div class="left-container pull-left">
+        <div class="left-header">
+            <div class="left-header-top clearfix">
+                <div class="circle-outer img-circle">
+                    <div class="circle-inner img-circle"></div>
+                </div>
+                ABC123
+            </div>
+            <div class="left-header-bottom text-center clearfix">
+                <div class="collector-num">
+                    110
+                    <br>
+                    收藏
+                </div>
+                <div class="follower-num">
+                    313
+                    <br>
+                    粉丝
+                </div>
+            </div>
+        </div>
+        <ul class="menu-list">
+            <li class="active">
+                <div class="list-item-name">
+                    <span class="glyphicon glyphicon-folder"></span>
+                    个人报表
+                </div>
+                <ul>
+                    <li>
+                        <span class="glyphicon glyphicon-chevron"></span>
+                        <span class="glyphicon glyphicon-folder"></span>
+                        文件一
+                    </li>
+                    <li class="active">
+                        <div class="list-item-name">
+                            <span class="glyphicon glyphicon-chevron"></span>
+                            <span class="glyphicon glyphicon-folder"></span>
+                            文件二
+                        </div>
+                        <ul>
+                            <li class="active">
+                                <div class="list-item-name">
+                                    <span class="glyphicon glyphicon-file"></span>
+                                    文档 1
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-item-name">
+                                    <span class="glyphicon glyphicon-file"></span>
+                                    文档 2
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="glyphicon glyphicon-chevron"></span>
+                        <span class="glyphicon glyphicon-folder"></span>
+                        文件三
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="list-item-name">
+                    <span class="glyphicon glyphicon-star"></span>
+                    个人收藏
+                </div>
+            </li>
+            <li>
+                <div class="list-item-name">
+                    <span class="glyphicon glyphicon-open"></span>
+                    我的分享
+                </div>
+            </li>
+            <li>
+                <div class="list-item-name">
+                    <span class="glyphicon glyphicon-camera"></span>
+                    图库
+                </div>
+            </li>
+            <li>
+                <div class="list-item-name">
+                    <span class="glyphicon glyphicon-arrow-up"></span>
+                    成长记录
+                </div>
+            </li>
+            <li>
+                <div class="list-item-name">
+                    <span class="glyphicon glyphicon-credit-card"></span>
+                    账户信息
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="right-container pull-left">
+        <div class="right-header">
+            <ol class="breadcrumb">
+                <li><a href="javascript:;">C 站</a></li>
+                <li><a href="javascript:;">个人报表</a></li>
+                <li><a href="javascript:;">文件一</a></li>
+                <li class="active">文档 1</li>
+            </ol>
+        </div>
+        <div class="main-content">
+            <div class="search-bar bg-white clearfix">
+                <form class="form-inline" action="#">
+                    <div class="form-block pull-left">
+                        <div class="form-line active">
+                            <label for="search-list">查询项</label>
+                            <div class="input-group">
+                                <select class="form-control" id="search-list">
+                                    <option value="1">第一项</option>
+                                </select>
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-block pull-left form-exchange">
+                        <div class="form-line">
+                            <label for="customer">买方</label>
+                            <div class="input-group">
+                                <select class="form-control form-control-lg" id="customer">
+                                    <option value="a">小 A</option>
+                                </select>
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-line">
+                            <label for="seller">卖方</label>
+                            <div class="input-group">
+                                <select class="form-control form-control-lg" id="seller">
+                                    <option value="c">小 C</option>
+                                </select>
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-block pull-left">
+                        <div class="form-line">
+                            <label for="date">日期</label>
+                            <input class="form-control form-control-lg" id="date" type="text" value="2016-04-01" readonly>
+                            <!--<input class="form-control form-control-lg" id="date" type="date" value="2016-04-01">-->
+                            <label for="consuming">总耗时</label>
+                            <div class="input-group">
+                                <select class="form-control" id="consuming">
+                                    <option value="8">8 天</option>
+                                </select>
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-line">
+                            <label for="people-count">人数</label>
+                            <div class="input-group">
+                                <select class="form-control" id="people-count">
+                                    <option value="10">10 人</option>
+                                </select>
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-chevron-down"></span>
+                                </div>
+                            </div>
+                            <label for="auction-count">成交项</label>
+                            <div class="input-group">
+                                <select class="form-control form-control-lg" id="auction-count">
+                                    <option value="10">10 项</option>
+                                </select>
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-block pull-left">
+                        <button class="btn btn-primary search-btn" type="submit">搜索</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
