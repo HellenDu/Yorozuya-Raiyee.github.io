@@ -1,0 +1,332 @@
+$blue: #91d4da;
+$white: #fffeff;
+$dark-grey3: #e2e2e2;
+$deepen-black: #303030;
+$dark-black0: #f5f5f5;
+$dark-black: #646464;
+$dark-black1: #5b5b5b;
+$dark-grey: #dfdfdf;
+$dark-grey1: #f8f8f8;
+$psdwidth: 1000px;
+$phonewidth: 375px;
+$proportion: $phonewidth / $psdwidth;
+
+@function propx($px) {
+  @return $proportion * $px
+}
+
+a, img {
+  -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
+}
+
+html, body {
+  -webkit-user-select: none; /* 禁止选中文本（如无文本选中需求，此为必选项） */
+  user-select: none;
+}
+
+p, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Microsoft yahei;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  color: $white;
+
+  .header {
+    position: relative;
+    display: flex;
+    font-size: 17px;
+    height: propx(115px);
+    background-color: $blue;
+    div:first-child {
+      width: propx(30px);
+      height: propx(50px);
+      position: absolute;
+      left: propx(30px);
+      top: propx(57.5px);
+      transform: translateY(-50%);
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .back {
+      position: absolute;
+      width: 76px;
+      line-height: propx(115px);
+      text-align: left;
+      left: propx(70px);
+    }
+    .title {
+      position: relative;
+      line-height: 43px;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .nav {
+    width: 100%;
+    height: propx(119px);
+    color: $dark_black;
+    dl {
+      display: flex;
+      margin: 0;
+      dd {
+        margin: 0;
+        flex: 1;
+        text-align: center;
+        line-height: propx(115px);
+        &.active {
+          border-bottom: propx(10px) solid $blue;
+        }
+      }
+    }
+  }
+  .container-1 {
+    width: 100%;
+    height: propx(550px);
+    background-image: url("../img/pic1.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .container-2 {
+    padding: 0 propx(25px);
+
+    > dl {
+      width: 100%;
+      height: propx(290px);
+      display: flex;
+      margin: 0;
+      > dd {
+        flex: 1;
+        margin: 0;
+        dl {
+          dd {
+            text-align: center;
+            margin: auto;
+            width: propx(120px);
+            height: propx(120px);
+            background-image: url("../img/pic2.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+          }
+          dt {
+            padding-top: propx(40px);
+            color: $dark-black;
+            text-align: center;
+          }
+        }
+      }
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $dark-grey;
+    }
+  }
+  .container-3 {
+
+    > dl {
+      padding: propx(40px) propx(30px);
+      display: flex;
+      margin: 0;
+
+      > dd {
+        flex: 1;
+        margin: 0;
+        &:nth-child(2) {
+          border-left: solid 1px $dark-grey;
+          border-right: solid 1px $dark-grey;
+        }
+
+        dl {
+          margin: 0;
+          dt {
+            img {
+              width: 100%;
+              height: 100%;
+            }
+            margin: auto;
+            width: propx(200px);
+            height: propx(200px);
+          }
+          dd {
+            margin: 0;
+            text-align: center;
+            &:nth-child(2) {
+              color: black;
+              font-size: $deepen-black;
+            }
+            &:last-child {
+              color: #646464;
+              font-size: propx(35px);
+              padding: propx(15px) 0;
+            }
+          }
+        }
+      }
+    }
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: propx(35px);
+      background-color: $dark-black0;
+    }
+  }
+  .container-4 {
+    > dl {
+      padding: propx(40px) propx(30px);
+      margin: 0;
+
+      > dt {
+        color: $dark-black1;
+        font-size: propx(45px);
+
+        &:after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 1px;
+          margin-top: propx(25px);
+          margin-bottom: propx(40px);
+          background-color: #e0e0e0;
+
+        }
+      }
+
+      > dd {
+        display: flex;
+        margin: 0;
+        height: propx(300px);
+        > div {
+          flex: 1;
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          > div {
+            height: propx(140px);
+            background-color: $dark-grey1;
+            margin: 0 0 propx(20px) propx(25px);
+            text-align: center;
+            line-height: propx(140px);
+            color: $dark-black1;
+            &:last-child {
+              margin-bottom: 0 !important;
+            }
+          }
+
+        }
+
+      }
+
+    }
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: propx(35px);
+      background-color: $dark-black0;
+    }
+  }
+
+  .container-5 {
+    > div {
+      display: flex;
+      padding: propx(40px) propx(30px);
+      margin: 0;
+      height: propx(240px);
+      div {
+        flex: 3;
+        width: 100%;
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      dl {
+        flex: 5;
+        margin: 0;
+        padding-left: propx(30px);
+        position: relative;
+        dt:first-child {
+          color: $dark-black1;
+          font-size: 22px;
+        }
+        dt:last-child {
+          color: $dark-grey3;
+          position: absolute;
+          bottom: 0;
+          font-size: propx(35px);
+        }
+      }
+    }
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $dark-black0;
+    }
+  }
+
+  .container-6 {
+    > dl {
+      padding: propx(40px) propx(30px);
+      margin: 0;
+
+      > dt {
+        &:first-child {
+          color: $dark-black1;
+          font-size: 22px;
+          margin-bottom: propx(26px);
+        }
+        &:last-child {
+          margin-top: propx(25px);
+          color: $dark-grey3;
+          font-size: propx(35px);
+        }
+      }
+
+      > dd {
+        display: flex;
+        margin: 0;
+        height: propx(220px);
+        > div {
+          flex: 1;
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          &:nth-child(2) {
+            border-left: solid propx(10px) $white;
+            border-right: solid propx(10px) $white;
+          }
+        }
+      }
+
+    }
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: propx(133px);
+      background-color: $dark-black0;
+    }
+  }
+
+}
