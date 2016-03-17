@@ -1,7 +1,7 @@
 @import "../../../common/scss/bootstrap/variables";
 
 $psd-total-width: 1280px;
-$actual-total-width: 1280px;
+$actual-total-width: 1276px;
 $scale: $actual-total-width/$psd-total-width;
 $left-container-width: $scale * 260px;
 $right-container-width: $actual-total-width - $left-container-width;
@@ -436,7 +436,7 @@ select.form-control {
   }
 
   .panel {
-    display: inline-block;
+    float: left;
   }
 
   .panel-first {
@@ -446,6 +446,10 @@ select.form-control {
   .panel-second {
     width: $scale * 350px;
     float: right;
+
+    hr {
+      margin-top: 68px;
+    }
 
     .panel-body {
       padding: $scale * 35px;
