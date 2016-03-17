@@ -127,6 +127,7 @@ body {
 .menu-list {
   list-style: none;
   padding-left: 0;
+  font-size: 12px;
 
   > li {
     padding: $scale * 15px $scale * 45px;
@@ -170,6 +171,7 @@ body {
   background-color: #eeeeed;
 
   .right-header .breadcrumb {
+    font-size: 13px;
     @include bg-color;
 
     li {
@@ -305,7 +307,6 @@ select.form-control {
 
   .history-item {
     float: left;
-    //display: inline-block;
     padding: 15px $scale * 24px;
     border: 1px solid $border-color;
     border-right: none;
@@ -567,6 +568,7 @@ select.form-control {
         padding: 5px 10px;
         border-radius: 0;
         height: 26px;
+        outline: none;
       }
 
       .input-group + .input-group {
@@ -620,6 +622,12 @@ select.form-control {
   }
 
   .brand-table {
+    border-bottom: none;
+
+    tr:nth-last-child(1) th {
+      border-bottom: none;
+    }
+
     th {
       padding: 5px 8px;
       > div.pull-left {
