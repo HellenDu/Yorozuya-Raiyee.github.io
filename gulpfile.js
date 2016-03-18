@@ -17,6 +17,7 @@ let sass = require('gulp-sass');
 let shell = require('gulp-shell');
 let sourcemaps = require('gulp-sourcemaps');
 let uglify = require('gulp-uglify');
+let JSON = require('json3');
 let path = require('path');
 let Task = require('shell-task');
 
@@ -52,7 +53,7 @@ var compileScss = function (srcPath) {
     return gulp.src(srcPath, {base: 'src'})
         .pipe(sourcemaps.init())
         .pipe(sass())
-        .on('error',function(e){
+        .on('error', function (e) {
             console.log(e);
         })
         .pipe(postcss([autoprefixer({browsers: '> 1% in CN'})]))
@@ -111,8 +112,21 @@ gulp.task('js', function () {
 });
 
 gulp.task('manifestJson', function () {
-    return gulp.src(['dist/**/*.?(js|css)', '!dist/hash-manifest.js'])
+    return gulp.src(['dist/**/*.?(css|html|js)', '!dist/hash-manifest.js'])
         .pipe(hashManifest({dest: 'dist'}));
+});
+
+gulp.task('sortManifest', function () {
+    var manifest = require('./dist/hash-manifest.json'),
+        actualManifest = {};
+
+    Object.keys(manifest).sort().forEach(function (key) {
+        actualManifest[key] = manifest[key];
+    });
+
+    gulp.src('dist/hash-manifest.json')
+        .pipe(replace(/.*/, JSON.stringify(actualManifest)))
+        .pipe(gulp.dest('dist'))
 });
 
 gulp.task('manifestJsonSelf', function () {
@@ -143,20 +157,22 @@ gulp.task('replace', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('copy',function(){
-   gulp.src(['src/**/*','!src/**/*.?(js|css|scss|html)'])
-       .pipe(gulp.dest('dist'));
+gulp.task('copy', function () {
+    gulp.src(['src/**/*', '!src/**/*.?(js|css|scss)'])
+        .pipe(gulp.dest('dist'));
 });
 
 var manifestTask = function () {
-    new Task('gulp manifestJson')
+    return new Task('gulp copy')
+        .then('gulp manifestJson')
+        .then('gulp sortManifest')
         .then('gulp manifestJsonSelf')
         .then('gulp manifestJs replace')
         .run();
 };
 
 gulp.task('build', shell.task([
-    'gulp del copy',
+    'gulp del',
     'gulp css scss bs-js js',
     'gulp manifest'
 ]));
