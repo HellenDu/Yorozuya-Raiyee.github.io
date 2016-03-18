@@ -88,6 +88,7 @@ body {
       }
     }
   }
+
   .container-1 {
     width: 100%;
     height: propx(550px);
@@ -100,13 +101,16 @@ body {
 
     > dl {
       width: 100%;
-      height: propx(290px);
+
+      height: propx(210px);
       display: flex;
       margin: 0;
+      padding: propx(45px) 0;
       > dd {
         flex: 1;
         margin: 0;
         dl {
+          margin: 0;
           dd {
             text-align: center;
             margin: auto;
@@ -248,8 +252,7 @@ body {
       margin: 0;
       height: propx(240px);
       div {
-        flex: 3;
-        width: 100%;
+        width:40%;
         height: 100%;
         img {
           width: 100%;
@@ -257,10 +260,11 @@ body {
         }
       }
       dl {
-        flex: 5;
+        width:60%;
         margin: 0;
         padding-left: propx(30px);
         position: relative;
+        height:100%;
         dt:first-child {
           color: $dark-black1;
           font-size: 22px;
