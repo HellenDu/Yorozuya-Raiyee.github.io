@@ -9,6 +9,7 @@ let postcss = require('gulp-postcss');
 let replace = require('gulp-replace');
 let autoprefixer = require('autoprefixer');
 let cssnano = require('cssnano');
+let minifycss = require('gulp-minify-css');             //压缩 css
 let notify = require('gulp-notify');
 let notifier = require('node-notifier');
 let rename = require('gulp-rename');
@@ -41,7 +42,8 @@ gulp.task('del-original-bs-scss', ['rename-bs-scss'], function () {
 var compileCSS = function (srcPath) {
     return gulp.src(srcPath, {base: 'src'})
         .pipe(sourcemaps.init())
-        .pipe(postcss([cssnano({safe: true}), autoprefixer({browsers: '> 1% in CN'})]))
+        .pipe(postcss(autoprefixer({browsers: '> 1% in CN'})))
+        .pipe(minifycss())
         .pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: CONTEXT + '/src'}))
         .pipe(gulp.dest('dist'));
 };
@@ -53,7 +55,8 @@ var compileScss = function (srcPath) {
         .on('error',function(e){
             console.log(e);
         })
-        .pipe(postcss([cssnano({safe: true}), autoprefixer({browsers: '> 1% in CN'})]))
+        .pipe(postcss([autoprefixer({browsers: '> 1% in CN'})]))
+        .pipe(minifycss())
         .pipe(rename(function (path) {
             path.dirname = path.dirname.replace(/\/scss$/, '/css');
         }))
@@ -153,7 +156,7 @@ var manifestTask = function () {
 };
 
 gulp.task('build', shell.task([
-    'gulp del',
+    'gulp del copy',
     'gulp css scss bs-js js',
     'gulp manifest'
 ]));
