@@ -156,7 +156,7 @@ var manifestTask = function () {
 };
 
 gulp.task('build', shell.task([
-    'gulp del',
+    'gulp del copy',
     'gulp css scss bs-js js',
     'gulp manifest'
 ]));
