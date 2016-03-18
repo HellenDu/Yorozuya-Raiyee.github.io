@@ -111,7 +111,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('manifestJson', function () {
-    return gulp.src(['dist/**/*.?(js|css|html)', '!dist/hash-manifest.js'])
+    return gulp.src(['dist/**/*.?(js|css)', '!dist/hash-manifest.js'])
         .pipe(hashManifest({dest: 'dist'}));
 });
 
