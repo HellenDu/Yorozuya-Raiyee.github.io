@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+        html, body, div {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 0;
+        }
+
+        .row {
+            padding: 0 10px;
+        }
+
+        .col {
+            display: inline-block;
+        }
+        
+        .col-md-4 {
+            width: 33.3333%;
+        }
+
+        .col-md-3 {
+            width: 25%;
+        }
+
+        .col-md-6 {
+            width: 50%;
+        }
+
+        .col-md-1 {
+            width: 8.3333%;
+        }
+
+        .col-md-2 {
+            width: 16.6667%;
+        }
+
+        .col-md-12 {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .col-sm-4 {
+                width: 33.3333%;
+            }
+
+            .col-sm-3 {
+                width: 25%;
+            }
+
+            .col-sm-6 {
+                width: 50%;
+            }
+
+            .col-sm-1 {
+                width: 8.3333%;
+            }
+
+            .col-sm-8 {
+                width: 66.6667%;
+            }
+
+            .col-sm-2 {
+                width: 16.6667%;
+            }
+
+            .col-sm-12 {
+                width: 100%;
+            }
+        }
+
+        .col > div {
+            background-color: #eee;
+            border: 1px solid #999;
+            height: 50px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col col-sm-6 col-md-4">
+            <div></div>
+        </div>
+        <div class="col col-sm-6 col-md-4">
+            <div></div>
+        </div>
+        <div class="col col-sm-12 col-md-4">
+            <div></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-md-3">
+            <div></div>
+        </div>
+        <div class="col col-md-6">
+            <div></div>
+        </div>
+        <div class="col col-md-3">
+            <div></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-md-1 col-sm-2">
+            <div></div>
+        </div>
+        <div class="col col-md-1 col-sm-2">
+            <div></div>
+        </div>
+        <div class="col col-md-2 col-sm-8">
+            <div></div>
+        </div>
+        <div class="col col-md-2 col-sm-3">
+            <div></div>
+        </div>
+        <div class="col col-md-6 col-sm-3">
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>
