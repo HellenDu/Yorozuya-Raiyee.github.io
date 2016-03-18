@@ -262,6 +262,19 @@ select.form-control {
       }
     }
 
+    #date {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: transparent;
+      border-radius: 0;
+      border-color: $border-color;
+      box-shadow: none;
+      font-size: 12px;
+      height: 26px;
+      color: #323333;
+      padding: 6px 20px 4px 10px;
+    }
+
     + .form-block {
       margin-left: $scale * 40px;
     }
@@ -286,7 +299,7 @@ select.form-control {
       color: #abaaaa;
       padding: 2px 4px;
       font-size: 54px;
-      @include bg-color;
+      font-weight: lighter;
     }
   }
 
@@ -330,6 +343,7 @@ select.form-control {
 
     &.history-btn {
       padding: 27.5px;
+      float: right;
 
       span {
         font-size: 12px;
@@ -371,7 +385,7 @@ select.form-control {
       padding: 12px $scale * 15px;
 
       + li {
-        margin-left: $scale * 28px;
+        margin-left: $scale * 27.5px;
       }
 
       .item-content {
@@ -421,6 +435,7 @@ select.form-control {
 
       &.item-yellow {
         border-left: 2px solid $cus-yellow;
+        float: right;
 
         &:after {
           background-color: $cus-yellow;
